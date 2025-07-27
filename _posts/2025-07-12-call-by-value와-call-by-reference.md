@@ -51,7 +51,7 @@ public class Main {
 
 예제 코드를 보면 `count`의 값을 증가시켜서 10이 출력되는게 맞지 않나? 라는 생각을 할 수가 있는데, 이를 자바의 메모리 관점에서 보면 쉽게 이해할 수 있다. <br />
 
-![스텍프레임(기본형)](/assets/img/stack-frame//stack-frame(primitive).png)
+![스텍프레임(기본형)](/assets/img/blog/stack-frame//stack-frame(primitive).png)
 
 이렇듯, 메모리의 관점에서 보면 main 메소드의 `count` 변수는 increase 메소드에 의한 영향을 받지 않는다. 단지, increase 메서드에는 `count` 값의 복사본을 전달할 뿐이다. 
 
@@ -88,7 +88,7 @@ public class Main {
 그리고 코드에 따라 `arr[0]`의 값에 70을 더한다.
 4. main 메소드의 `arr`변수가 참조하는 배열의 값이 변경되었으므로, 77을 출력한다.
 
-![스택프레임(참조형)](/assets/img/stack-frame//stack-frame(reference).png)
+![스택프레임(참조형)](/assets/img/blog/stack-frame//stack-frame(reference).png)
 
 이처럼, increase 메소드의 매개변수 `arr`은 main 메서드 변수 `arr`이 참조하는 주소 값의 복사본 (Call by Value)을 통해 같은 객체를 참조할 뿐, 원본 객체에 대한 직접적인 영향을 끼칠 수는 없다.
 
@@ -137,7 +137,7 @@ int main(void) {
 3. 출력 시 `changeRef`를 통해 생성된 객체의 값이 출력된다.
 
 그림을 보면 다음과 같다.
-![Call by Reference](/assets/img/stack-frame/call-by-reference.png)
+![Call by Reference](/assets/img/blog/stack-frame/call-by-reference.png)
 
 
 `chanceRef()` 메소드는 원본 객체의 참조 값을 이용한 참조 객체의 변경이 아닌 원본 객체의 참조 값 자체를 변경시켰다. 이러한 방식을 Call by Reference라 하며 Call by Value와는 다르게 동작함을 알 수 있다.

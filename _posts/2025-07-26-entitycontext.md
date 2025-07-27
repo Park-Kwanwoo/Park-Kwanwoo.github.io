@@ -29,7 +29,7 @@ categories: [ JPA ]
 ## 3. 엔티티 생명주기
 
 영속성 컨텍스트가 갖는 특징과 장점을 이해하기 위해, 먼저 엔티티의 생명주기를 간단히 알아보자.
-![엔티티 생명주기](/assets/img/persistence-context/life-cycle.png)
+![엔티티 생명주기](/assets/img/blog/persistence-context/life-cycle.png)
 
 | 상태           | 설명                                                                |
 | -------------- |-------------------------------------------------------------------|
@@ -96,10 +96,10 @@ em.remove(member); // 객체를 삭제
 ```java
 Member member = em.find("member1");
 ```
-![영속 엔티티 조회](/assets/img/persistence-context/persist.png)*영속 상태의 엔티티 조회*
+![영속 엔티티 조회](/assets/img/blog/persistence-context/persist.png)*영속 상태의 엔티티 조회*
 
 영속 상태의 엔티티가 존재하는 경우, 1차 캐시를 통한 조회가 가능하다. 하지만, 찾고자 하는 엔티티가 영속 상태가 아닌 경우에는 같은 코드에 대해서 다음과 같이 동작한다.
-![영속 상태가 아닌 엔티티 조회](/assets/img/persistence-context/not-persist.png)*영속 상태가 아닌 엔티티 조회*
+![영속 상태가 아닌 엔티티 조회](/assets/img/blog/persistence-context/not-persist.png)*영속 상태가 아닌 엔티티 조회*
 
 이처럼 영속성 컨텍스트가 제공하는 1차 캐시로 인해, 영속 상태의 엔티티가 존재하면 성능상 이점을 가질 수 있다. 
 
@@ -135,7 +135,7 @@ em.persist(member2);
 tx.commit();
 ```
 해당 코드를 실행하면 영속성 컨텍스트는 다음과 같이 동작한다.
-![쓰기지연](/assets/img/persistence-context/write-behind.png)*쓰기 지연 동작 과정*
+![쓰기지연](/assets/img/blog/persistence-context/write-behind.png)*쓰기 지연 동작 과정*
 
 1. 회원 A를 영속화 한다.
 2. 영속성 컨텍스트는 1차 캐시에 회원 엔티티를 저장함과 동시에 엔티티 등록 쿼리를 작성한다.
@@ -174,7 +174,7 @@ member1.setName("수정자");
 // em.update(member1); 이런 코드는 존재하지 않음
 tx.commit();
 ```
-![변경감지](/assets/img/persistence-context/dirty-checking.png)*변경 감지* 
+![변경감지](/assets/img/blog/persistence-context/dirty-checking.png)*변경 감지* 
 
 1. 트랜잭션을 커밋하면 엔티티 매니저 내부에서 플러시가 먼저 호출된다.
 2. 엔티티와 스냅샷을 비교해서 변경된 엔티티를 찾는다.
